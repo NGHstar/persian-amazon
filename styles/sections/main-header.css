@@ -40,7 +40,7 @@
   justify-content: space-between;
 }
 
-.amazon-header__logo {
+.amazon-header__logo img {
   height: 50px;
 }
 
@@ -157,8 +157,7 @@
     padding: 14px 18px;
   }
 
-  .amazon-header__mobile-logo {
+  .amazon-header__mobile-logo img {
     height: 50px;
-    object-fit: cover;
   }
 }

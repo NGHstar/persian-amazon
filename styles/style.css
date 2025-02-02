@@ -1,6 +1,7 @@
 @import url("sections/main-header.css");
 @import url("sections/main-footer.css");
 @import url("sections/main-body.css");
+@import url("sections/amazon-cart.css");
 
 body {
   font-family: vazir;
