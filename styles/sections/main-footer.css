@@ -1,0 +1,18 @@
+.amazon-footer {
+  background-color: #131921;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.amazon-footer__copyright {
+  width: 100%;
+  text-align: center;
+  margin: 64px 0 6px 0;
+  border-top: 1px solid #242e3b;
+  color: #465466;
+  padding-top: 8px;
+}

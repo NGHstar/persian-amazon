@@ -1,0 +1,118 @@
+.amazon-main {
+  padding: 16px;
+}
+
+/* PRODUCT GRID */
+.amazon-main__products-grid {
+  display: grid;
+  gap: 30px;
+  justify-content: center;
+  margin: 28px auto 0 auto;
+  max-width: 1200px;
+}
+
+/* PRODUCT CARD STYLE */
+.product-card {
+  border: 1px solid rgb(220, 220, 228);
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.product-card__image {
+  border-bottom: 1px solid rgb(220, 220, 228);
+  padding: 0 16px 16px 16px;
+}
+
+.product-card__title {
+  height: 3.4rem;
+}
+
+.product-card__rating {
+  width: 90px;
+}
+
+.product-card__price {
+  font-weight: bold;
+}
+
+.product-card__quantity {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.product-card__quantity span {
+  margin-top: 3px;
+  margin-left: 8px;
+}
+.product-card__quantity select {
+  outline: 1px solid rgb(220, 220, 228);
+  border: none;
+  border-left: 5px solid transparent;
+  border-radius: 10px;
+  padding: 1px 8px 0 3px;
+  font-family: "victor mono";
+  font-weight: bold;
+  width: 60px;
+  height: 30px;
+}
+
+.product-card__add-to-cart-button {
+  border: none;
+  background-color: #d8a159;
+  color: black;
+  font-family: vazir;
+  font-size: 1rem;
+  border-radius: 12px;
+  height: 45px;
+  transition: 0.3s;
+}
+.product-card__add-to-cart-button:hover {
+  cursor: pointer;
+  transform: translateY(-4px);
+}
+
+/* Screen size control */
+@media only screen and (max-width: 541px) {
+  .amazon-main {
+    padding: 0;
+  }
+
+  /* GRID */
+  .amazon-main__products-grid {
+    margin-left: -1px;
+    margin-right: -1px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0;
+  }
+
+  /* PRODUCT */
+  .product-card {
+    border: 1px solid rgb(220, 220, 228);
+    background-color: white;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: -1px;
+  }
+  .product-card:nth-child(odd) {
+    transform: translateX(-1px);
+  }
+}
+
+@media only screen and (min-width: 538px) {
+  .amazon-main__products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: -1px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .amazon-main__products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: -1px;
+  }
+}

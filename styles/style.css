@@ -1,0 +1,13 @@
+@import url("sections/main-header.css");
+@import url("sections/main-footer.css");
+@import url("sections/main-body.css");
+
+body {
+  font-family: vazir;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}

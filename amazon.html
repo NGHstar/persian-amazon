@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <!-- head -->
+  <head>
+    <title>پروژه آمازون</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <!-- header -->
+    <header class="amazon-header">
+      <img
+        class="amazon-header__logo"
+        src="images/amazon-logo-white.png"
+        alt="white logo"
+      />
+      <img
+        class="amazon-header__mobile-logo"
+        src="images/amazon-mobile-logo-white.png"
+        alt="mobile white logo"
+      />
+
+      <div class="amazon-header__search-box">
+        <input
+          type="text"
+          class="search-box__text-input"
+          placeholder="جستجوی محصولات"
+        />
+        <button class="search-box__submit-button">
+          <img src="images/icons/search-icon.svg" alt="search icon" />
+        </button>
+      </div>
+
+      <img
+        class="mobile-menu__icon"
+        src="images/icons/menu-icon.svg"
+        alt="mobile menu icon"
+      />
+
+      <div class="amazon-header__menu">
+        <a href="cart.html">
+          <img
+            class="menu__cart-button"
+            src="images/icons/cart-icon.svg"
+            alt="cart icon"
+          />
+        </a>
+        <a class="menu__orders" href="cart.html"> سفارش‌ها </a>
+      </div>
+    </header>
+
+    <ul class="amazon-header__mobile-menu">
+      <a href="#"><li href="cart.html">سفارش‌ها</li></a>
+      <a href="#"><li href="cart.html">سبد خرید (0)</li></a>
+    </ul>
+
+    <!-- main -->
+    <div class="amazon-main">
+      <div class="amazon-main__products-grid">
+        <div class="product-card">
+          <img
+            src="images/products/p-t-shirt.jpg"
+            alt="product image"
+            class="product-card__image"
+          />
+          <p class="product-card__title">تی‌شرت مردانه - بنفش</p>
+          <img
+            class="product-card__rating"
+            src="images/ratings/rating-50.png"
+            alt="rating stars"
+          />
+          <p class="product-card__price">$34.99</p>
+          <div class="product-card__quantity">
+            <span class="quantity__title">تعداد: </span>
+            <select>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <button class="product-card__add-to-cart-button">افزون به سبد</button>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="images/products/b-tshirt.jpg"
+            alt="product image"
+            class="product-card__image"
+          />
+          <p class="product-card__title">تی‌شرت مردانه - مشکی</p>
+          <img
+            class="product-card__rating"
+            src="images/ratings/rating-45.png"
+            alt="rating stars"
+          />
+          <p class="product-card__price">$24.66</p>
+          <div class="product-card__quantity">
+            <span class="quantity__title">تعداد: </span>
+            <select>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <button class="product-card__add-to-cart-button">افزون به سبد</button>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="images/products/coffeemaker.jpg"
+            alt="product image"
+            class="product-card__image"
+          />
+          <p class="product-card__title">قهوه ساز خانگی مدل لورم</p>
+          <img
+            class="product-card__rating"
+            src="images/ratings/rating-40.png"
+            alt="rating stars"
+          />
+          <p class="product-card__price">$120.80</p>
+          <div class="product-card__quantity">
+            <span class="quantity__title">تعداد: </span>
+            <select>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <button class="product-card__add-to-cart-button">افزون به سبد</button>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="images/products/foodmaker.jpg"
+            alt="product image"
+            class="product-card__image"
+          />
+          <p class="product-card__title">غذا ساز برقی مدل لورم</p>
+          <img
+            class="product-card__rating"
+            src="images/ratings/rating-30.png"
+            alt="rating stars"
+          />
+          <p class="product-card__price">$74.20</p>
+          <div class="product-card__quantity">
+            <span class="quantity__title">تعداد: </span>
+            <select>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <button class="product-card__add-to-cart-button">افزون به سبد</button>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="images/products/basketball.jpg"
+            alt="product image"
+            class="product-card__image"
+          />
+          <p class="product-card__title">توپ بسکتبال مدل لورم</p>
+          <img
+            class="product-card__rating"
+            src="images/ratings/rating-35.png"
+            alt="rating stars"
+          />
+          <p class="product-card__price">$18.70</p>
+          <div class="product-card__quantity">
+            <span class="quantity__title">تعداد: </span>
+            <select>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <button class="product-card__add-to-cart-button">افزون به سبد</button>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="images/products/football.jpg"
+            alt="product image"
+            class="product-card__image"
+          />
+          <p class="product-card__title">توپ فوتبال اصلی مدل لورم</p>
+          <img
+            class="product-card__rating"
+            src="images/ratings/rating-50.png"
+            alt="rating stars"
+          />
+          <p class="product-card__price">$19.99</p>
+          <div class="product-card__quantity">
+            <span class="quantity__title">تعداد: </span>
+            <select>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <button class="product-card__add-to-cart-button">افزون به سبد</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="amazon-footer">
+      <img
+        src="images/amazon-logo-white.png"
+        alt="amazon logo"
+        class="amazon-footer__logo"
+      />
+      <p class="amazon-footer__copyright">copyright amazon 2025</p>
+    </footer>
+    <!-- end -->
+  </body>
+  <script src="js/main.js"></script>
+</html>
