@@ -10,14 +10,8 @@
 
 .amazon-footer img {
   height: 60px;
-  object-fit: contain;
-}
-
-/* small logo on mobile */
-@media only screen and (max-width: 800px) {
-  .amazon-footer img {
-    height: 50px;
-  }
+  width: 142px;
+  object-fit: fill;
 }
 
 .amazon-footer__copyright {

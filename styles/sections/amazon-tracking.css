@@ -1,0 +1,85 @@
+main {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 42px;
+}
+
+.package-details {
+  border: 1px solid silver;
+  border-radius: 15px;
+  padding: 20px 24px;
+  margin: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.package-date {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.package-product-image {
+  border: 1px solid rgb(227, 227, 235);
+  padding: 8px;
+  border-radius: 12px;
+  width: 200px;
+}
+
+.tracking-labels-container {
+  margin-top: 52px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tracking-label {
+  font-size: 1.2rem;
+  font-family: "lalezar";
+}
+
+.active-label {
+  color: #007600;
+}
+
+.tracking-bar-container {
+  background-color: silver;
+  height: 24px;
+}
+
+.tracking-bar-progress {
+  position: relative;
+  height: 100%;
+  width: 20px;
+  background-color: #007600;
+}
+
+.package-product-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-info-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 550px) {
+  .package-product-image {
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  .package-product-wrapper {
+    flex-direction: column;
+    justify-content: start;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .tracking-labels-container {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+}

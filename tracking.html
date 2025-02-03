@@ -8,14 +8,49 @@
   </head>
 
   <body>
-    <!-- header -->
-    <amazon-header></amazon-header>
+    <div class="wrapper">
+      <!-- header -->
+      <amazon-header></amazon-header>
+      <div class="cart-header">
+        <img src="images/icons/track-order-icon.svg" alt="" />
+        <span class="cart-header__title">پیگیری بسته</span>
+      </div>
 
-    <!-- main -->
-    <main></main>
+      <!-- main -->
+      <main>
+        <div class="package-details">
+          <div class="package-product-wrapper">
+            <div class="product-info-wrapper">
+              <span class="package-date">تحویل: روز چهارشنبه 2 بهمن</span>
+              <span class="package-title">تی‌شرت مردانه - مشکی</span>
+              <span class="package-quantity">تعداد: 4</span>
+            </div>
+            <img
+              class="package-product-image"
+              src="images/products/b-tshirt.jpg"
+              alt="product image"
+            />
+          </div>
+          <div class="tracking-labels-container">
+            <span class="tracking-prepare-label tracking-label active-label">
+              آماده سازی
+            </span>
+            <span class="tracking-shipping-label tracking-label"
+              >ارسال شده</span
+            >
+            <span class="tracking-delivered-label tracking-label"
+              >تحویل شده</span
+            >
+          </div>
+          <div class="tracking-bar-container">
+            <div class="tracking-bar-progress"></div>
+          </div>
+        </div>
+      </main>
 
-    <!-- footer -->
-    <amazon-footer></amazon-footer>
+      <!-- footer -->
+      <amazon-footer></amazon-footer>
+    </div>
   </body>
   <script src="js/component_controller.js"></script>
   <script src="js/main.js"></script>

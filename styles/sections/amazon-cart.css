@@ -1,29 +1,25 @@
 /* ====================== HEADER ====================== */
 .cart-header {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px 0 72px 0;
+  padding-left: 10px;
+  margin-top: 40px;
+  margin-bottom: 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
-.cart-header .amazon-header__mobile-logo,
-.cart-header .amazon-header__logo {
-  margin-right: 16px;
-  transform: translateY(16px);
+.cart-header img {
+  width: 30px;
+  height: 30px;
 }
 
 .cart-header__title {
   font-family: "lalezar";
-  font-size: 1.8rem;
-  color: black;
-  transform: translateY(15px);
-}
+  font-size: 1.6rem;
 
-.cart-header__icon {
-  width: 45px;
-  transform: translateY(6px);
-  margin-left: 16px;
+  color: black;
+  transform: translateY(2px);
 }
 
 /* ====================== BODY ====================== */
@@ -32,7 +28,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  margin-bottom: 62px;
+  margin-bottom: 32px;
 }
 
 .cart-body__content {
@@ -40,14 +36,6 @@
   display: grid;
   gap: 16px;
   grid-template-columns: 2fr 1fr;
-}
-
-.cart-body__title {
-  color: #b12704;
-  margin-right: 20px;
-  margin-bottom: 16px;
-  font-size: 1.4rem;
-  font-weight: bold;
 }
 
 /* order item */
@@ -196,6 +184,13 @@
 }
 
 /* SCREEN CONTROL */
+
+@media only screen and (max-width: 800px) {
+  .cart-header__title {
+    margin-right: 0;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .remove-product-button {
     bottom: 12px;
@@ -225,10 +220,5 @@
 
   .cart-body__checkout {
     order: -1;
-  }
-
-  .cart-body__title {
-    margin-bottom: 16px;
-    margin-right: 17px;
   }
 }

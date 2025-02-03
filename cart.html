@@ -8,173 +8,167 @@
   </head>
 
   <body>
-    <!-- cart header -->
-    <header class="cart-header">
-      <a href="./" class="amazon-header__logo">
-        <img src="images/amazon-logo.png" alt="white logo" />
-      </a>
-
-      <a href="./" class="amazon-header__mobile-logo">
-        <img src="images/amazon-mobile-logo.png" alt="mobile white logo" />
-      </a>
-
-      <span class="cart-header__title">سبد خرید (0)</span>
-
-      <img
-        src="images/icons/cart-black-icon.svg"
-        alt="icon"
-        class="cart-header__icon"
-      />
-    </header>
-
-    <!-- cart body -->
-    <main class="cart-body container">
-      <span class="cart-body__title">سفارش شما</span>
-
-      <div class="cart-body__content">
-        <div class="cart-body__orders">
-          <!-- order - item: 1 -->
-          <div class="order-item">
-            <p class="order-item__date">تاریخ تحویل: 24/2/1403</p>
-            <div class="order-item-content">
-              <div class="order-item__product">
-                <img
-                  class="product-image"
-                  src="images/products/b-tshirt.jpg"
-                  alt="product image"
-                />
-                <div class="product-info">
-                  <span class="product-name">تی‌شرت مشکی مردانه</span>
-                  <span class="product-price">25000 تومان</span>
-                  <div class="product-card__quantity">
-                    <span class="quantity__title">تعداد: </span>
-                    <select>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                    </select>
-                  </div>
-                  <button class="remove-product-button">
-                    <img src="images/icons/delete-icon.svg" alt="delete icon" />
-                  </button>
-                </div>
-              </div>
-              <div class="order-item__delivery">
-                <span class="delivery-title">زمان تحویل را مشخص کنید:</span>
-                <!-- delivery - option: 1 -->
-                <div class="delivery-option">
-                  <input name="delivery-option" type="radio" checked />
-                  <div class="delivery-option-content">
-                    <span class="delivery-option__date">سه‌شنبه 22 آذر</span>
-                    <span class="delivery-option__price">رایگان</span>
-                  </div>
-                </div>
-                <!-- delivery - option: 2 -->
-                <div class="delivery-option">
-                  <input name="delivery-option" type="radio" checked />
-                  <div class="delivery-option-content">
-                    <span class="delivery-option__date">پنجشنبه 18 آذر</span>
-                    <span class="delivery-option__price">30000 تومان</span>
-                  </div>
-                </div>
-                <!-- delivery - option: 3 -->
-                <div class="delivery-option">
-                  <input name="delivery-option" type="radio" checked />
-                  <div class="delivery-option-content">
-                    <span class="delivery-option__date">دو‌شنبه 15 آذر</span>
-                    <span class="delivery-option__price">50000 تومان</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- order - item: 2 -->
-          <div class="order-item">
-            <p class="order-item__date">تاریخ تحویل: 24/2/1403</p>
-            <div class="order-item-content">
-              <div class="order-item__product">
-                <img
-                  class="product-image"
-                  src="images/products/b-tshirt.jpg"
-                  alt="product image"
-                />
-                <div class="product-info">
-                  <span class="product-name">تی‌شرت مشکی مردانه</span>
-                  <span class="product-price">25000 تومان</span>
-                  <div class="product-card__quantity">
-                    <span class="quantity__title">تعداد: </span>
-                    <select>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                    </select>
-                  </div>
-                  <button class="remove-product-button">
-                    <img src="images/icons/delete-icon.svg" alt="delete icon" />
-                  </button>
-                </div>
-              </div>
-              <div class="order-item__delivery">
-                <span class="delivery-title">زمان تحویل را مشخص کنید:</span>
-                <!-- delivery - option: 1 -->
-                <div class="delivery-option">
-                  <input name="delivery-option" type="radio" checked />
-                  <div class="delivery-option-content">
-                    <span class="delivery-option__date">سه‌شنبه 22 آذر</span>
-                    <span class="delivery-option__price">رایگان</span>
-                  </div>
-                </div>
-                <!-- delivery - option: 2 -->
-                <div class="delivery-option">
-                  <input name="delivery-option" type="radio" checked />
-                  <div class="delivery-option-content">
-                    <span class="delivery-option__date">پنجشنبه 18 آذر</span>
-                    <span class="delivery-option__price">30000 تومان</span>
-                  </div>
-                </div>
-                <!-- delivery - option: 3 -->
-                <div class="delivery-option">
-                  <input name="delivery-option" type="radio" checked />
-                  <div class="delivery-option-content">
-                    <span class="delivery-option__date">دو‌شنبه 15 آذر</span>
-                    <span class="delivery-option__price">50000 تومان</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cart-body__checkout">
-          <span class="checkout-title">خلاصه سفارش</span>
-          <div class="checkout-row">
-            <span class="checout-cart-items__count">محصولات(1):</span>
-            <span class="checout-cart-items__total">500000 تومان</span>
-          </div>
-          <div class="checkout-row">
-            <span>هزینه ارسال:</span>
-            <span class="checout-shipping__total">50000 تومان</span>
-          </div>
-          <div class="checkout-row">
-            <span class="checout-shipping__title">مالیات (10 درصد):</span>
-            <span class="checout-shipping__total">5500 تومان</span>
-          </div>
-          <hr />
-          <div class="checkout-row checkout-total-wrapper">
-            <span>هزینه کل:</span>
-            <span class="checkout-total">555500 تومان</span>
-          </div>
-          <button class="product-card__add-to-cart-button">تسویه حساب</button>
-        </div>
+    <div class="wrapper">
+      <!-- cart header -->
+      <amazon-header></amazon-header>
+      <div class="cart-header">
+        <img src="images/icons/cart-black-icon.svg" alt="" />
+        <span class="cart-header__title">سبد خرید (0)</span>
       </div>
-    </main>
 
-    <!-- footer -->
-    <amazon-footer></amazon-footer>
-    <!-- end -->
+      <!-- cart body -->
+      <main class="cart-body container">
+        <div class="cart-body__content">
+          <div class="cart-body__orders">
+            <!-- order - item: 1 -->
+            <div class="order-item">
+              <p class="order-item__date">تاریخ تحویل: 24/2/1403</p>
+              <div class="order-item-content">
+                <div class="order-item__product">
+                  <img
+                    class="product-image"
+                    src="images/products/b-tshirt.jpg"
+                    alt="product image"
+                  />
+                  <div class="product-info">
+                    <span class="product-name">تی‌شرت مشکی مردانه</span>
+                    <span class="product-price">25000 تومان</span>
+                    <div class="product-card__quantity">
+                      <span class="quantity__title">تعداد: </span>
+                      <select>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                    <button class="remove-product-button">
+                      <img
+                        src="images/icons/delete-icon.svg"
+                        alt="delete icon"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="order-item__delivery">
+                  <span class="delivery-title">زمان تحویل را مشخص کنید:</span>
+                  <!-- delivery - option: 1 -->
+                  <div class="delivery-option">
+                    <input name="p1-delivery-option" type="radio" checked />
+                    <div class="delivery-option-content">
+                      <span class="delivery-option__date">سه‌شنبه 22 آذر</span>
+                      <span class="delivery-option__price">رایگان</span>
+                    </div>
+                  </div>
+                  <!-- delivery - option: 2 -->
+                  <div class="delivery-option">
+                    <input name="p1-delivery-option" type="radio" />
+                    <div class="delivery-option-content">
+                      <span class="delivery-option__date">پنجشنبه 18 آذر</span>
+                      <span class="delivery-option__price">30000 تومان</span>
+                    </div>
+                  </div>
+                  <!-- delivery - option: 3 -->
+                  <div class="delivery-option">
+                    <input name="p1-delivery-option" type="radio" />
+                    <div class="delivery-option-content">
+                      <span class="delivery-option__date">دو‌شنبه 15 آذر</span>
+                      <span class="delivery-option__price">50000 تومان</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- order - item: 2 -->
+            <div class="order-item">
+              <p class="order-item__date">تاریخ تحویل: 24/2/1403</p>
+              <div class="order-item-content">
+                <div class="order-item__product">
+                  <img
+                    class="product-image"
+                    src="images/products/b-tshirt.jpg"
+                    alt="product image"
+                  />
+                  <div class="product-info">
+                    <span class="product-name">تی‌شرت مشکی مردانه</span>
+                    <span class="product-price">25000 تومان</span>
+                    <div class="product-card__quantity">
+                      <span class="quantity__title">تعداد: </span>
+                      <select>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                    <button class="remove-product-button">
+                      <img
+                        src="images/icons/delete-icon.svg"
+                        alt="delete icon"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="order-item__delivery">
+                  <span class="delivery-title">زمان تحویل را مشخص کنید:</span>
+                  <!-- delivery - option: 1 -->
+                  <div class="delivery-option">
+                    <input name="p2-delivery-option" type="radio" checked />
+                    <div class="delivery-option-content">
+                      <span class="delivery-option__date">سه‌شنبه 22 آذر</span>
+                      <span class="delivery-option__price">رایگان</span>
+                    </div>
+                  </div>
+                  <!-- delivery - option: 2 -->
+                  <div class="delivery-option">
+                    <input name="p2-delivery-option" type="radio" />
+                    <div class="delivery-option-content">
+                      <span class="delivery-option__date">پنجشنبه 18 آذر</span>
+                      <span class="delivery-option__price">30000 تومان</span>
+                    </div>
+                  </div>
+                  <!-- delivery - option: 3 -->
+                  <div class="delivery-option">
+                    <input name="p2-delivery-option" type="radio" />
+                    <div class="delivery-option-content">
+                      <span class="delivery-option__date">دو‌شنبه 15 آذر</span>
+                      <span class="delivery-option__price">50000 تومان</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-body__checkout">
+            <span class="checkout-title">خلاصه سفارش</span>
+            <div class="checkout-row">
+              <span class="checout-cart-items__count">محصولات(1):</span>
+              <span class="checout-cart-items__total">500000 تومان</span>
+            </div>
+            <div class="checkout-row">
+              <span>هزینه ارسال:</span>
+              <span class="checout-shipping__total">50000 تومان</span>
+            </div>
+            <div class="checkout-row">
+              <span class="checout-shipping__title">مالیات (10 درصد):</span>
+              <span class="checout-shipping__total">5500 تومان</span>
+            </div>
+            <hr />
+            <div class="checkout-row checkout-total-wrapper">
+              <span>هزینه کل:</span>
+              <span class="checkout-total">555500 تومان</span>
+            </div>
+            <button class="product-card__add-to-cart-button">تسویه حساب</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <amazon-footer></amazon-footer>
+      <!-- end -->
+    </div>
   </body>
   <script src="js/component_controller.js"></script>
   <script src="js/main.js"></script>
