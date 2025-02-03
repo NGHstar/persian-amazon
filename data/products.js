@@ -1,6 +1,6 @@
 const products = [
   {
-    id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
+    id: "e62d810g",
     image: "images/products/p-t-shirt.jpg",
     name: "تی شرت مردانه بنفش",
     rating: {
@@ -13,7 +13,7 @@ const products = [
     sizeChartLink: "images/clothing-size-chart.png",
   },
   {
-    id: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
+    id: "xhn7gs63",
     image: "images/products/b-tshirt.jpg",
     name: "تی شرت مردانه مشکی",
     rating: {
@@ -26,7 +26,7 @@ const products = [
     sizeChartLink: "images/clothing-size-chart.png",
   },
   {
-    id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
+    id: "2jcofx10",
     image: "images/products/coffeemaker.jpg",
     name: "قهوه ساز خانگی مدل لورم",
     rating: {
@@ -37,7 +37,7 @@ const products = [
     keywords: ["قهوه ساز", "آشپزخانه", "لوازم خانگی"],
   },
   {
-    id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
+    id: "z0k8moyh",
     image: "images/products/foodmaker.jpg",
     name: "غذا ساز برقی مدل لورم",
     rating: {
@@ -48,7 +48,7 @@ const products = [
     keywords: ["غذا ساز", "آشپزخانه", "لوازم خانگی"],
   },
   {
-    id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
+    id: "uvk7acy2",
     image: "images/products/basketball.jpg",
     name: "توپ بسکتبال مدل لورم (اصل)",
     rating: {
@@ -59,7 +59,7 @@ const products = [
     keywords: ["بسکتبال", "توپ", "ورزشی"],
   },
   {
-    id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
+    id: "s5gb5y7s",
     image: "images/products/football.jpg",
     name: "توپ فوتبال مدل لورم (اصل)",
     rating: {
@@ -70,7 +70,7 @@ const products = [
     keywords: ["فوتبال", "توپ", "ورزشی"],
   },
   {
-    id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
+    id: "4g0emg17",
     image: "images/products/blackp.jpg",
     name: "پرده سیاه - ضد آفتاب",
     rating: {
@@ -81,7 +81,7 @@ const products = [
     keywords: ["اتاق خواب", "پرده", "لوازم خانگی"],
   },
   {
-    id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
+    id: "mk02z4ec",
     image: "images/products/abajor.jpg",
     name: "چراغ خواب پایه بلند چوبی",
     rating: {

@@ -49,11 +49,14 @@ class MyHeader extends HTMLElement {
 
       <div class="amazon-header__menu">
         <a href="cart.html">
-          <img
-            class="menu__cart-button"
-            src="images/icons/cart-icon.svg"
-            alt="cart icon"
-          />
+          <div class="menu__cart-button">
+            <img
+              src="images/icons/cart-icon.svg"
+              alt="cart icon"
+            />
+            <span class="menu__cart-badge hide"></span>
+          </div>
+          
         </a>
         <a class="menu__orders" href="orders.html"> سفارش‌ها </a>
       </div>

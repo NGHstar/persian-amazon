@@ -6,9 +6,9 @@ mobileMenuIcon.addEventListener("click", () => {
   mobileMenu.classList.toggle("expanded");
 });
 
+// ================ GENERATE PRODUCTS ================
 const productsGrid = document.querySelector(".amazon-main__products-grid");
 let productsHTML = "";
-
 products.forEach((product, index) => {
   productsHTML += `
           <div class="product-card">
@@ -37,11 +37,47 @@ products.forEach((product, index) => {
                 <option value="5">5</option>
               </select>
             </div>
-            <button class="product-card__add-to-cart-button">
+            <div class="product-card__added-to-cart-message">
+              <span>اضافه شد</span>
+              <img src="images/icons/check-circle-icon.svg" />
+            </div>
+            <button class="product-card__add-to-cart-button" 
+              data-product-id="${product.id}">
               افزون به سبد
             </button>
           </div>
   `;
 });
-
 productsGrid.innerHTML = productsHTML;
+
+// ================ ADD TO CART ================
+const cartBadge = document.querySelector(".menu__cart-badge");
+
+document
+  .querySelectorAll(".product-card__add-to-cart-button")
+  .forEach((button) => {
+    button.addEventListener("click", () => {
+      const productId = button.dataset.productId;
+
+      let matchingItem;
+
+      cart.forEach((item) => {
+        if (productId === item.productId) {
+          matchingItem = item;
+        }
+      });
+
+      if (matchingItem) {
+        matchingItem.quantity += 1;
+      } else {
+        cart.push({
+          productId: productId,
+          quantity: 1,
+        });
+      }
+
+      cartBadge.innerHTML = cart.length;
+
+      cartBadge.classList.remove("hide");
+    });
+  });
