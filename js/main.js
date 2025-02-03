@@ -6,27 +6,6 @@ mobileMenuIcon.addEventListener("click", () => {
   mobileMenu.classList.toggle("expanded");
 });
 
-const products = [
-  {
-    image: "images/products/b-tshirt.jpg",
-    name: "black t shirt",
-    rating: {
-      stars: 4.5,
-      count: 87,
-    },
-    price: 260000,
-  },
-  {
-    image: "images/products/p-t-shirt.jpg",
-    name: "black t shirt",
-    rating: {
-      stars: 4.5,
-      count: 87,
-    },
-    price: 260000,
-  },
-];
-
 const productsGrid = document.querySelector(".amazon-main__products-grid");
 let productsHTML = "";
 
