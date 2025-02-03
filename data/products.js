@@ -7,7 +7,7 @@ const products = [
       stars: 4.5,
       count: 87,
     },
-    priceCents: 1090,
+    price: 1090,
     keywords: ["تی شرت", "مردانه", "پوشاک"],
     type: "clothing",
     sizeChartLink: "images/clothing-size-chart.png",
@@ -20,7 +20,7 @@ const products = [
       stars: 4,
       count: 127,
     },
-    priceCents: 2095,
+    price: 2095,
     keywords: ["تی شرت", "مردانه", "پوشاک"],
     type: "clothing",
     sizeChartLink: "images/clothing-size-chart.png",
@@ -33,7 +33,7 @@ const products = [
       stars: 4.5,
       count: 56,
     },
-    priceCents: 799,
+    price: 799,
     keywords: ["قهوه ساز", "آشپزخانه", "لوازم خانگی"],
   },
   {
@@ -44,7 +44,7 @@ const products = [
       stars: 4.5,
       count: 56,
     },
-    priceCents: 799,
+    price: 799,
     keywords: ["غذا ساز", "آشپزخانه", "لوازم خانگی"],
   },
   {
@@ -55,7 +55,7 @@ const products = [
       stars: 4.5,
       count: 56,
     },
-    priceCents: 799,
+    price: 799,
     keywords: ["بسکتبال", "توپ", "ورزشی"],
   },
   {
@@ -66,7 +66,7 @@ const products = [
       stars: 4.5,
       count: 56,
     },
-    priceCents: 799,
+    price: 799,
     keywords: ["فوتبال", "توپ", "ورزشی"],
   },
   {
@@ -77,7 +77,7 @@ const products = [
       stars: 4.5,
       count: 56,
     },
-    priceCents: 799,
+    price: 799,
     keywords: ["اتاق خواب", "پرده", "لوازم خانگی"],
   },
   {
@@ -88,7 +88,7 @@ const products = [
       stars: 4.5,
       count: 56,
     },
-    priceCents: 799,
+    price: 799,
     keywords: ["اتاق خواب", "لوازم خانگی", "چراغ"],
   },
 ];

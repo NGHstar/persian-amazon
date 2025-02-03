@@ -31,7 +31,20 @@
 }
 
 .product-card__rating {
-  width: 90px;
+  display: flex;
+  gap: 8px;
+  justify-content: start;
+  align-items: center;
+}
+
+.rating__image {
+  height: 24px;
+}
+
+.rating__vote-count {
+  color: rgb(31, 131, 197);
+  font-size: 1.1rem;
+  transform: translateY(3px);
 }
 
 .product-card__price {
