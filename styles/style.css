@@ -6,12 +6,12 @@
 
 @font-face {
   font-family: "vazir";
-  src: url("fonts/vazir.woff2");
+  src: url("../fonts/vazir.woff2");
 }
 
 @font-face {
   font-family: "lalezar";
-  src: url("fonts/lalezar.woff2");
+  src: url("../fonts/lalezar.woff2");
 }
 
 body {

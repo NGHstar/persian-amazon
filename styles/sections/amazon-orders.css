@@ -1,3 +1,70 @@
+.orders {
+  padding: 0 16px;
+  max-width: 900px;
+  margin: 40px auto 50px auto;
+}
+
+.order-title {
+  font-size: 1.4rem;
+  margin-right: 6px;
+  font-weight: 900;
+}
+
+.order-card {
+  margin-top: 12px;
+}
+
+.order-card header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 20px;
+  padding: 1rem 1.2rem;
+  background-color: #f0f2f2;
+  border: 1px solid silver;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.order-card__column span:first-child {
+  font-weight: bold;
+}
+
+.order-card__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-card__products {
+  border: 1px solid silver;
+  border-top: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 40px 25px;
+  display: grid;
+  row-gap: 60px;
+}
+
+.order-product-card {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr;
+}
+
+.order-product-card img {
+  max-width: 110px;
+  height: auto;
+}
+
+.product-card__info {
+  display: grid;
+  row-gap: 5px;
+}
+
+.product-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* buttons */
 .product-reorder-button img {
   width: 20px;
   height: 20px;
@@ -9,11 +76,10 @@
   justify-content: center;
   align-items: center;
   width: 150px;
-  height: 45px;
+  height: 40px;
   border: none;
   background-color: #d8a159;
   border-radius: 12px;
-
   gap: 12px;
   font-family: "vazir";
   font-size: 1rem;
@@ -26,6 +92,12 @@
 
 .product-reorder-button:hover img {
   transform: rotateZ(-150deg);
+}
+
+.track-order-button-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: end;
 }
 
 .track-order-button {
@@ -42,4 +114,38 @@
 .track-order-button:hover {
   cursor: pointer;
   background-color: #f7fafa;
+}
+
+/* =============== SCREEN CONTROL =============== */
+@media only screen and (max-width: 600px) {
+  .order-product-card {
+    grid-template-columns: 120px 1fr;
+    row-gap: 12px;
+  }
+
+  .track-order-button {
+    width: 150px;
+    height: 40px;
+    padding: 0;
+    border-radius: 12px;
+  }
+
+  .track-order-button-wrapper {
+    justify-self: start;
+    grid-column: 2;
+  }
+
+  .order-card header {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .order-card__column {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .order-id-title {
+    min-width: 80px;
+  }
 }

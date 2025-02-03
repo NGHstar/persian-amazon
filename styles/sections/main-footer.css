@@ -10,13 +10,22 @@
 
 .amazon-footer img {
   height: 60px;
+  object-fit: contain;
+}
+
+/* small logo on mobile */
+@media only screen and (max-width: 800px) {
+  .amazon-footer img {
+    height: 50px;
+  }
 }
 
 .amazon-footer__copyright {
   width: 100%;
+  height: 28px;
   text-align: center;
   margin: 64px 0 6px 0;
   border-top: 1px solid #242e3b;
   color: #465466;
-  padding-top: 8px;
+  padding-top: 12px;
 }
