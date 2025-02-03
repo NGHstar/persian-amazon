@@ -8,6 +8,10 @@
   margin-top: 32px;
 }
 
+.amazon-footer img {
+  height: 60px;
+}
+
 .amazon-footer__copyright {
   width: 100%;
   text-align: center;

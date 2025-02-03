@@ -63,7 +63,7 @@
   border: none;
   background-color: #d8a159;
   color: black;
-  font-family: vazir;
+  font-family: "vazir";
   font-size: 1rem;
   border-radius: 12px;
   height: 45px;
@@ -74,16 +74,19 @@
   transform: translateY(-4px);
 }
 
-/* Screen size control */
+/* ======== Screen size control ======== */
 @media only screen and (max-width: 541px) {
   .amazon-main {
     padding: 0;
   }
 
+  .product-card__image {
+    border-bottom: none;
+    padding: 0 16px 4px 16px;
+  }
+
   /* GRID */
   .amazon-main__products-grid {
-    margin-left: -1px;
-    margin-right: -1px;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 0;
   }
@@ -91,8 +94,8 @@
   /* PRODUCT */
   .product-card {
     border: 1px solid rgb(220, 220, 228);
-    background-color: white;
     border-radius: 0px;
+    background-color: white;
     display: flex;
     flex-direction: column;
     padding: 20px;

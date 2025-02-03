@@ -2,7 +2,7 @@ class MyFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
            <footer class="amazon-footer">
-                <a href="index.html">
+                <a href="./">
                     <img
                     src="images/amazon-logo-white.png"
                     alt="amazon logo"
@@ -19,11 +19,11 @@ class MyHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <header class="amazon-header">
-      <a href="index.html" class="amazon-header__logo">
+      <a href="./" class="amazon-header__logo">
         <img src="images/amazon-logo-white.png" alt="white logo" />
       </a>
 
-      <a href="index.html" class="amazon-header__mobile-logo">
+      <a href="./" class="amazon-header__mobile-logo">
         <img
           src="images/amazon-mobile-logo-white.png"
           alt="mobile white logo"

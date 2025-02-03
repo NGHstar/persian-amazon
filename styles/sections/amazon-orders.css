@@ -1,0 +1,45 @@
+.product-reorder-button img {
+  width: 20px;
+  height: 20px;
+  transition: 1s;
+}
+
+.product-reorder-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 45px;
+  border: none;
+  background-color: #d8a159;
+  border-radius: 12px;
+
+  gap: 12px;
+  font-family: "vazir";
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.product-reorder-button:hover {
+  cursor: pointer;
+}
+
+.product-reorder-button:hover img {
+  transform: rotateZ(-150deg);
+}
+
+.track-order-button {
+  border: 1px solid silver;
+  border-radius: 8px;
+  background-color: white;
+  font-family: "vazir";
+  padding: 0 50px;
+  transition: 0.3s;
+  height: 40px;
+  font-size: 1rem;
+}
+
+.track-order-button:hover {
+  cursor: pointer;
+  background-color: #f7fafa;
+}

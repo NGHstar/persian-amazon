@@ -53,7 +53,7 @@
 }
 
 .search-box__text-input {
-  font-family: vazir;
+  font-family: "vazir";
   border: none;
   outline: none;
   flex: 1;

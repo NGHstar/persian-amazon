@@ -2,9 +2,20 @@
 @import url("sections/main-footer.css");
 @import url("sections/main-body.css");
 @import url("sections/amazon-cart.css");
+@import url("sections/amazon-orders.css");
+
+@font-face {
+  font-family: "vazir";
+  src: url("fonts/vazir.woff2");
+}
+
+@font-face {
+  font-family: "lalezar";
+  src: url("fonts/lalezar.woff2");
+}
 
 body {
-  font-family: vazir;
+  font-family: "vazir";
   margin: 0;
   box-sizing: border-box;
 }
