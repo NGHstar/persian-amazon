@@ -1,4 +1,4 @@
-import { cart } from "../data/cart.js";
+import { cart, addToCart } from "../data/cart.js";
 import { products } from "../data/products.js";
 
 const mobileMenuIcon = document.querySelector(".mobile-menu__icon");
@@ -53,6 +53,12 @@ products.forEach((product, index) => {
 productsGrid.innerHTML = productsHTML;
 
 // ================ ADD TO CART ================
+function updateCartBadge(quantity) {
+  cartBadge.innerHTML = cart.length;
+  cartBadge.classList.remove("hide");
+  mobileMenuCart.innerHTML = `سبد خرید (${cart.length} محصول)`;
+}
+
 const cartBadge = document.querySelector(".menu__cart-badge");
 const mobileMenuCart = document.querySelector(".mobile-menu-cart"); // سبد خرید منوی موبایل
 
@@ -61,27 +67,7 @@ document
   .forEach((button) => {
     button.addEventListener("click", () => {
       const productId = button.dataset.productId;
-
-      let matchingItem;
-
-      cart.forEach((item) => {
-        if (productId === item.productId) {
-          matchingItem = item;
-        }
-      });
-
-      if (matchingItem) {
-        matchingItem.quantity += 1;
-      } else {
-        cart.push({
-          productId: productId,
-          quantity: 1,
-        });
-      }
-
-      cartBadge.innerHTML = cart.length;
-
-      cartBadge.classList.remove("hide");
-      mobileMenuCart.innerHTML = `سبد خرید (${cart.length} محصول)`;
+      addToCart(productId);
+      updateCartBadge();
     });
   });
