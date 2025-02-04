@@ -64,7 +64,7 @@ class MyHeader extends HTMLElement {
 
     <ul class="amazon-header__mobile-menu">
       <a href="orders.html"><li>سفارش‌ها</li></a>
-      <a href="cart.html"><li>سبد خرید (0)</li></a>
+      <a href="cart.html"><li class="mobile-menu-cart">سبد خرید (0)</li></a>
     </ul>
     `;
   }
