@@ -71,3 +71,10 @@ class MyHeader extends HTMLElement {
 }
 customElements.define("amazon-footer", MyFooter);
 customElements.define("amazon-header", MyHeader);
+
+const mobileMenuIcon = document.querySelector(".mobile-menu__icon");
+const mobileMenu = document.querySelector(".amazon-header__mobile-menu");
+
+mobileMenuIcon.addEventListener("click", () => {
+  mobileMenu.classList.toggle("expanded");
+});

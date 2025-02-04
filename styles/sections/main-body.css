@@ -86,6 +86,7 @@
   transition: 0.3s;
   opacity: 0;
   transform: scale(0);
+  transform-origin: right;
 }
 
 .product-card__added-to-cart-message img {
