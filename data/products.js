@@ -20,7 +20,7 @@ export const products = [
       stars: 4.5,
       count: 87,
     },
-    price: 1090,
+    price: 190000,
     keywords: ["تی شرت", "مردانه", "پوشاک"],
     type: "clothing",
     sizeChartLink: "images/clothing-size-chart.png",
@@ -33,7 +33,7 @@ export const products = [
       stars: 4,
       count: 127,
     },
-    price: 2095,
+    price: 170000,
     keywords: ["تی شرت", "مردانه", "پوشاک"],
     type: "clothing",
     sizeChartLink: "images/clothing-size-chart.png",
@@ -46,7 +46,7 @@ export const products = [
       stars: 4.5,
       count: 56,
     },
-    price: 799,
+    price: 3000000,
     keywords: ["قهوه ساز", "آشپزخانه", "لوازم خانگی"],
   },
   {
@@ -57,7 +57,7 @@ export const products = [
       stars: 4.5,
       count: 56,
     },
-    price: 799,
+    price: 1800000,
     keywords: ["غذا ساز", "آشپزخانه", "لوازم خانگی"],
   },
   {
@@ -68,7 +68,7 @@ export const products = [
       stars: 4.5,
       count: 56,
     },
-    price: 799,
+    price: 780000,
     keywords: ["بسکتبال", "توپ", "ورزشی"],
   },
   {
@@ -79,7 +79,7 @@ export const products = [
       stars: 4.5,
       count: 56,
     },
-    price: 799,
+    price: 990000,
     keywords: ["فوتبال", "توپ", "ورزشی"],
   },
   {
@@ -90,7 +90,7 @@ export const products = [
       stars: 4.5,
       count: 56,
     },
-    price: 799,
+    price: 440000,
     keywords: ["اتاق خواب", "پرده", "لوازم خانگی"],
   },
   {
@@ -101,7 +101,7 @@ export const products = [
       stars: 4.5,
       count: 56,
     },
-    price: 799,
+    price: 1100000,
     keywords: ["اتاق خواب", "لوازم خانگی", "چراغ"],
   },
 ];
