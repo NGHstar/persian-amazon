@@ -1,7 +1,11 @@
-import { products } from "../../data/products.js";
+import { getProduct } from "../../data/products.js";
 import { cart, removeFromCart, updateDeliveryOption } from "../../data/cart.js";
 import { persianDate } from "../utils/persian_date.js";
-import { deliveryOptions } from "../../data/delivery_options.js";
+import {
+  deliveryOptions,
+  getDeliveryOption,
+} from "../../data/delivery_options.js";
+import { renderCheckoutSummary } from "./checkout_summary.js";
 
 export function renderOrderSummary() {
   const cartItemsContainer = document.querySelector(".cart-body__orders");
@@ -10,23 +14,11 @@ export function renderOrderSummary() {
   cart.forEach((cartItem) => {
     // ---
     const productId = cartItem.productId;
-    let matchingProduct;
-
-    products.forEach((product) => {
-      if (product.id === productId) {
-        matchingProduct = product;
-      }
-    });
+    const matchingProduct = getProduct(productId);
 
     const deliveryOptionId = cartItem.deliveryOptionId;
 
-    let deliveryOption;
-
-    deliveryOptions.forEach((option) => {
-      if (option.id === deliveryOptionId) {
-        deliveryOption = option;
-      }
-    });
+    const deliveryOption = getDeliveryOption(deliveryOptionId);
 
     const selectedDeliveryDate = persianDate(deliveryOption.days);
 
@@ -124,6 +116,7 @@ export function renderOrderSummary() {
       const { productId, deliveryId } = element.dataset;
       updateDeliveryOption(productId, deliveryId);
       renderOrderSummary();
+      renderCheckoutSummary();
     });
   });
 }
