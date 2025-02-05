@@ -48,12 +48,6 @@ products.forEach((product, index) => {
 productsGrid.innerHTML = productsHTML;
 
 // ================ ADD TO CART ================
-function updateCartBadge(quantity) {
-  cartBadge.innerHTML = cart.length;
-  cartBadge.classList.remove("hide");
-  mobileMenuCart.innerHTML = `سبد خرید (${cart.length} محصول)`;
-}
-
 function showAddedToCartMessage(productId) {
   const message = document.querySelector(`.product-message-${productId}`);
 
@@ -63,9 +57,6 @@ function showAddedToCartMessage(productId) {
     message.classList.remove("visible");
   }, 2000);
 }
-
-const cartBadge = document.querySelector(".menu__cart-badge");
-const mobileMenuCart = document.querySelector(".mobile-menu-cart"); // سبد خرید منوی موبایل
 
 document
   .querySelectorAll(".product-card__add-to-cart-button")
@@ -79,6 +70,5 @@ document
 
       showAddedToCartMessage(productId);
       addToCart(productId, Number(productQuantity));
-      updateCartBadge();
     });
   });
