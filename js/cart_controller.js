@@ -1,12 +1,12 @@
 import { products } from "../data/products.js";
-import { cart, removeFromCart } from "../data/cart.js";
+import { cart, removeFromCart, updateDeliveryOption } from "../data/cart.js";
 import { persianDate } from "./utils/persian_date.js";
 import { deliveryOptions } from "../data/delivery_options.js";
 
 const cartItemsContainer = document.querySelector(".cart-body__orders");
 let cartItemsHTML = "";
 
-cart.forEach((cartItem, i) => {
+cart.forEach((cartItem) => {
   // ---
   const productId = cartItem.productId;
   let matchingProduct;
@@ -69,14 +69,14 @@ cart.forEach((cartItem, i) => {
                 </div>
                 <div class="order-item__delivery">
                   <span class="delivery-title">زمان تحویل را مشخص کنید:</span>
-                  ${deliveryOptionsHtml(i, cartItem.deliveryOptionId)}
+                  ${deliveryOptionsHtml(productId, cartItem.deliveryOptionId)}
                 </div>
             </div>
         </div>
     `;
 });
 
-function deliveryOptionsHtml(id, deliveryId) {
+function deliveryOptionsHtml(productId, deliveryId) {
   // ---
   let html = "";
 
@@ -87,8 +87,11 @@ function deliveryOptionsHtml(id, deliveryId) {
     const isChecked = option.id === deliveryId ? "checked" : "";
 
     html += `
-        <div class="delivery-option">
-            <input name="delivery-option-${id}" type="radio" ${isChecked} />
+        <div class="delivery-option js-delivery-option"
+          data-product-id="${productId}"
+          data-delivery-id="${option.id}"
+        >
+            <input name="delivery-option-${productId}" type="radio" ${isChecked} />
             <div class="delivery-option-content">
                 <span class="delivery-option__date">${persianDate(
                   option.days
@@ -109,5 +112,12 @@ document.querySelectorAll(".remove-product-button").forEach((removeButton) => {
     const productID = removeButton.dataset.productId;
     removeFromCart(productID);
     document.querySelector(`.js-cart-item-${productID}`).remove();
+  });
+});
+
+document.querySelectorAll(".js-delivery-option").forEach((element) => {
+  element.addEventListener("click", () => {
+    const { productId, deliveryId } = element.dataset;
+    updateDeliveryOption(productId, deliveryId);
   });
 });
