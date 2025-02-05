@@ -3,33 +3,34 @@ import { cart, removeFromCart, updateDeliveryOption } from "../data/cart.js";
 import { persianDate } from "./utils/persian_date.js";
 import { deliveryOptions } from "../data/delivery_options.js";
 
-const cartItemsContainer = document.querySelector(".cart-body__orders");
-let cartItemsHTML = "";
+function renderOrderSummary() {
+  const cartItemsContainer = document.querySelector(".cart-body__orders");
+  let cartItemsHTML = "";
 
-cart.forEach((cartItem) => {
-  // ---
-  const productId = cartItem.productId;
-  let matchingProduct;
+  cart.forEach((cartItem) => {
+    // ---
+    const productId = cartItem.productId;
+    let matchingProduct;
 
-  products.forEach((product) => {
-    if (product.id === productId) {
-      matchingProduct = product;
-    }
-  });
+    products.forEach((product) => {
+      if (product.id === productId) {
+        matchingProduct = product;
+      }
+    });
 
-  const deliveryOptionId = cartItem.deliveryOptionId;
+    const deliveryOptionId = cartItem.deliveryOptionId;
 
-  let deliveryOption;
+    let deliveryOption;
 
-  deliveryOptions.forEach((option) => {
-    if (option.id === deliveryOptionId) {
-      deliveryOption = option;
-    }
-  });
+    deliveryOptions.forEach((option) => {
+      if (option.id === deliveryOptionId) {
+        deliveryOption = option;
+      }
+    });
 
-  const selectedDeliveryDate = persianDate(deliveryOption.days);
+    const selectedDeliveryDate = persianDate(deliveryOption.days);
 
-  cartItemsHTML += `
+    cartItemsHTML += `
         <div class="order-item js-cart-item-${productId}">
             <p class="order-item__date">تاریخ تحویل: ${selectedDeliveryDate}</p>
             <div class="order-item-content">
@@ -50,8 +51,8 @@ cart.forEach((cartItem) => {
                         <option value="${
                           cartItem.quantity
                         }" selected disabled hidden>${
-    cartItem.quantity
-  }</option>
+      cartItem.quantity
+    }</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -74,19 +75,20 @@ cart.forEach((cartItem) => {
             </div>
         </div>
     `;
-});
+  });
 
-function deliveryOptionsHtml(productId, deliveryId) {
-  // ---
-  let html = "";
-
-  deliveryOptions.forEach((option) => {
+  function deliveryOptionsHtml(productId, deliveryId) {
     // ---
-    const priceString = option.price === 0 ? "رایگان" : `${option.price}تومان`;
+    let html = "";
 
-    const isChecked = option.id === deliveryId ? "checked" : "";
+    deliveryOptions.forEach((option) => {
+      // ---
+      const priceString =
+        option.price === 0 ? "رایگان" : `${option.price}تومان`;
 
-    html += `
+      const isChecked = option.id === deliveryId ? "checked" : "";
+
+      html += `
         <div class="delivery-option js-delivery-option"
           data-product-id="${productId}"
           data-delivery-id="${option.id}"
@@ -100,24 +102,30 @@ function deliveryOptionsHtml(productId, deliveryId) {
             </div>
         </div>
         `;
-  });
+    });
 
-  return html;
+    return html;
+  }
+
+  cartItemsContainer.innerHTML = cartItemsHTML;
+
+  document
+    .querySelectorAll(".remove-product-button")
+    .forEach((removeButton) => {
+      removeButton.addEventListener("click", () => {
+        const productID = removeButton.dataset.productId;
+        removeFromCart(productID);
+        document.querySelector(`.js-cart-item-${productID}`).remove();
+      });
+    });
+
+  document.querySelectorAll(".js-delivery-option").forEach((element) => {
+    element.addEventListener("click", () => {
+      const { productId, deliveryId } = element.dataset;
+      updateDeliveryOption(productId, deliveryId);
+      renderOrderSummary();
+    });
+  });
 }
 
-cartItemsContainer.innerHTML = cartItemsHTML;
-
-document.querySelectorAll(".remove-product-button").forEach((removeButton) => {
-  removeButton.addEventListener("click", () => {
-    const productID = removeButton.dataset.productId;
-    removeFromCart(productID);
-    document.querySelector(`.js-cart-item-${productID}`).remove();
-  });
-});
-
-document.querySelectorAll(".js-delivery-option").forEach((element) => {
-  element.addEventListener("click", () => {
-    const { productId, deliveryId } = element.dataset;
-    updateDeliveryOption(productId, deliveryId);
-  });
-});
+renderOrderSummary();
