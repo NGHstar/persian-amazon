@@ -24,16 +24,16 @@ export function renderCheckoutSummary() {
   const checkoutSummaryHTML = `
     <span class="checkout-title">خلاصه سفارش</span>
       <div class="checkout-row">
-        <span class="checout-cart-items__count">محصولات (${getTotalQuantity()}):</span>
-        <span class="checout-cart-items__total">${productsTotal} تومان</span>
+        <span class="checkout-cart-items__count">محصولات (${getTotalQuantity()}):</span>
+        <span class="checkout-cart-items__total">${productsTotal} تومان</span>
       </div>
       <div class="checkout-row">
         <span>هزینه ارسال:</span>
-        <span class="checout-shipping__total">${shippingTotal} تومان</span>
+        <span class="checkout-shipping__total">${shippingTotal} تومان</span>
       </div>
       <div class="checkout-row">
-        <span class="checout-shipping__title">مالیات (10 درصد):</span>
-        <span class="checout-shipping__total">${Math.round(tax)} تومان</span>
+        <span class="checkout-shipping__title">مالیات (10 درصد):</span>
+        <span class="checkout-shipping__total">${Math.round(tax)} تومان</span>
       </div>
       <hr />
       <div class="checkout-row checkout-total-wrapper">
