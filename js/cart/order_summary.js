@@ -107,7 +107,8 @@ export function renderOrderSummary() {
       removeButton.addEventListener("click", () => {
         const productID = removeButton.dataset.productId;
         removeFromCart(productID);
-        document.querySelector(`.js-cart-item-${productID}`).remove();
+        renderOrderSummary();
+        renderCheckoutSummary();
       });
     });
 
