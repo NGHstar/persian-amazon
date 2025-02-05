@@ -69,3 +69,18 @@ export function updateDeliveryOption(productId, deliveryOptionId) {
   cartItem.deliveryOptionId = deliveryOptionId;
   saveToStorage();
 }
+
+export function updateQuantity(productId, newQuantity) {
+  const cartItem = getCartItem(productId);
+  cartItem.quantity = newQuantity;
+  saveToStorage();
+}
+
+export function getTotalQuantity() {
+  let total = 0;
+  cart.forEach((cartItem) => {
+    total += Number(cartItem.quantity);
+  });
+
+  return total;
+}

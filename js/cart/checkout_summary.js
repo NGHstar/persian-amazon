@@ -1,4 +1,4 @@
-import { cart } from "../../data/cart.js";
+import { cart, getTotalQuantity } from "../../data/cart.js";
 import { getDeliveryOption } from "../../data/delivery_options.js";
 import { getProduct } from "../../data/products.js";
 
@@ -24,7 +24,7 @@ export function renderCheckoutSummary() {
   const checkoutSummaryHTML = `
     <span class="checkout-title">خلاصه سفارش</span>
       <div class="checkout-row">
-        <span class="checout-cart-items__count">محصولات(${cart.length}):</span>
+        <span class="checout-cart-items__count">محصولات (${getTotalQuantity()}):</span>
         <span class="checout-cart-items__total">${productsTotal} تومان</span>
       </div>
       <div class="checkout-row">

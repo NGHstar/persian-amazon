@@ -1,5 +1,10 @@
 import { getProduct } from "../../data/products.js";
-import { cart, removeFromCart, updateDeliveryOption } from "../../data/cart.js";
+import {
+  cart,
+  removeFromCart,
+  updateDeliveryOption,
+  updateQuantity,
+} from "../../data/cart.js";
 import { persianDate } from "../utils/persian_date.js";
 import {
   deliveryOptions,
@@ -39,12 +44,15 @@ export function renderOrderSummary() {
                 } تومان</span>
                 <div class="product-card__quantity">
                     <span class="quantity__title">تعداد: </span>
-                    <select>
-                        <option value="${
-                          cartItem.quantity
-                        }" selected disabled hidden>${
-      cartItem.quantity
-    }</option>
+                    <select
+                    data-product-id="${productId}"
+                    class="quantity-select-element 
+                    quantity-product-${matchingProduct.id}">
+                        <option
+                        value="${cartItem.quantity}" 
+                        selected disabled hidden>
+                        ${cartItem.quantity}
+                        </option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -100,6 +108,18 @@ export function renderOrderSummary() {
   }
 
   cartItemsContainer.innerHTML = cartItemsHTML;
+
+  document.querySelectorAll(".quantity-select-element").forEach((e) => {
+    e.addEventListener("change", (value) => {
+      const productId = e.dataset.productId;
+      const newQuantity = document.querySelector(
+        `.quantity-product-${productId}`
+      ).value;
+      updateQuantity(productId, newQuantity);
+      renderOrderSummary();
+      renderCheckoutSummary();
+    });
+  });
 
   document
     .querySelectorAll(".remove-product-button")
