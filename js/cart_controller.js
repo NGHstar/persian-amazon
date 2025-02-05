@@ -1,5 +1,5 @@
 import { products } from "../data/products.js";
-import { cart } from "../data/cart.js";
+import { cart, removeFromCart } from "../data/cart.js";
 
 const cartItemsContainer = document.querySelector(".cart-body__orders");
 let cartItemsHTML = "";
@@ -16,7 +16,7 @@ cart.forEach((cartItem, i) => {
   });
 
   cartItemsHTML += `
-        <div class="order-item">
+        <div class="order-item js-cart-item-${productId}">
             <p class="order-item__date">تاریخ تحویل: 24/2/1403</p>
             <div class="order-item-content">
             <div class="order-item__product">
@@ -39,7 +39,7 @@ cart.forEach((cartItem, i) => {
                         <option value="5">5</option>
                     </select>
                 </div>
-                <button class="remove-product-button">
+                <button class="remove-product-button" data-product-id="${productId}"}>
                     <img
                     src="images/icons/delete-icon.svg"
                     alt="delete icon"
@@ -79,3 +79,11 @@ cart.forEach((cartItem, i) => {
     `;
 });
 cartItemsContainer.innerHTML = cartItemsHTML;
+
+document.querySelectorAll(".remove-product-button").forEach((removeButton) => {
+  removeButton.addEventListener("click", () => {
+    const productID = removeButton.dataset.productId;
+    removeFromCart(productID);
+    document.querySelector(`.js-cart-item-${productID}`).remove();
+  });
+});
