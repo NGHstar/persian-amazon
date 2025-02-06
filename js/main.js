@@ -1,5 +1,5 @@
-import { cart, addToCart } from "../data/cart.js";
-import { products } from "../data/products.js";
+import { cart, addToCart } from "./data/cart.js";
+import { products } from "./data/products.js";
 
 // ================ GENERATE PRODUCTS ================
 const productsGrid = document.querySelector(".amazon-main__products-grid");

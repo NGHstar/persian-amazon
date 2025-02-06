@@ -8,7 +8,7 @@ describe("test suite: persian date add days", () => {
   });
   // single test
   it("try zero", () => {
-    expect(persianDate(-50000000));
+    expect(persianDate(0));
   });
 });
 

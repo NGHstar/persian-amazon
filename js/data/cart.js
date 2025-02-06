@@ -1,16 +1,28 @@
-export let cart = JSON.parse(localStorage.getItem("cart")) || [];
+export let cart;
+
+loadFromStorage();
+
+export function loadFromStorage() {
+  cart = JSON.parse(localStorage.getItem("cart"));
+
+  if (!cart) {
+    cart = [];
+  }
+}
 
 const cartBadge = document.querySelector(".menu__cart-badge");
 const mobileMenuCart = document.querySelector(".mobile-menu-cart");
 
 function updateCartBadge(quantity) {
-  cartBadge.innerHTML = cart.length;
-  if (cart.length) {
-    cartBadge.classList.remove("hide");
-  } else {
-    cartBadge.classList.add("hide");
+  if (cartBadge) {
+    if (cart.length) {
+      cartBadge.classList.remove("hide");
+    } else {
+      cartBadge.classList.add("hide");
+    }
   }
-  mobileMenuCart.innerHTML = `سبد خرید (${cart.length} محصول)`;
+  if (mobileMenuCart)
+    mobileMenuCart.innerHTML = `سبد خرید (${cart.length} محصول)`;
 }
 
 if (cart) {
@@ -36,6 +48,8 @@ export function getCartItem(productId) {
 
 export function addToCart(productId, productQuantity) {
   const cartItem = getCartItem(productId);
+
+  if (!productQuantity) productQuantity = 1;
 
   if (cartItem) {
     cartItem.quantity += productQuantity;
