@@ -109,6 +109,10 @@ export function renderOrderSummary() {
 
   cartItemsContainer.innerHTML = cartItemsHTML;
 
+  document.querySelector(
+    ".cart-header__title"
+  ).innerHTML = `سبد خرید (${cart.length} محصول)`;
+
   document.querySelectorAll(".quantity-select-element").forEach((e) => {
     e.addEventListener("change", (value) => {
       const productId = e.dataset.productId;
