@@ -1,15 +1,15 @@
-import { getProduct } from "../../data/products.js";
+import { getProduct } from "../data/products.js";
 import {
   cart,
   removeFromCart,
   updateDeliveryOption,
   updateQuantity,
-} from "../../data/cart.js";
+} from "../data/cart.js";
 import { persianDate } from "../utils/persian_date.js";
 import {
   deliveryOptions,
   getDeliveryOption,
-} from "../../data/delivery_options.js";
+} from "../data/delivery_options.js";
 import { renderCheckoutSummary } from "./checkout_summary.js";
 
 export function renderOrderSummary() {

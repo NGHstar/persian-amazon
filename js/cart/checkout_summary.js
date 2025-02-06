@@ -1,6 +1,6 @@
-import { cart, getTotalQuantity } from "../../data/cart.js";
-import { getDeliveryOption } from "../../data/delivery_options.js";
-import { getProduct } from "../../data/products.js";
+import { cart, getTotalQuantity } from "../data/cart.js";
+import { getDeliveryOption } from "../data/delivery_options.js";
+import { getProduct } from "../data/products.js";
 
 export function renderCheckoutSummary() {
   // ---
