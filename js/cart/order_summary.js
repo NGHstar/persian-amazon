@@ -47,9 +47,10 @@ export function renderOrderSummary() {
                     <select
                     data-product-id="${productId}"
                     class="quantity-select-element 
-                    quantity-product-${matchingProduct.id}">
+                    quantity-product-${productId}">
                         <option
-                        value="${cartItem.quantity}" 
+                        value="${cartItem.quantity}"
+                        class="test-js-default-quantity-${productId}"
                         selected disabled hidden>
                         ${cartItem.quantity}
                         </option>
@@ -60,7 +61,7 @@ export function renderOrderSummary() {
                         <option value="5">5</option>
                     </select>
                 </div>
-                <button class="remove-product-button" data-product-id="${productId}"}>
+                <button class="remove-product-button js-test-remove-button-${productId}" data-product-id="${productId}"}>
                     <img
                     src="images/icons/delete-icon.svg"
                     alt="delete icon"
@@ -107,11 +108,12 @@ export function renderOrderSummary() {
     return html;
   }
 
-  cartItemsContainer.innerHTML = cartItemsHTML;
+  if (cartItemsContainer) cartItemsContainer.innerHTML = cartItemsHTML;
 
-  document.querySelector(
-    ".cart-header__title"
-  ).innerHTML = `سبد خرید (${cart.length} محصول)`;
+  if (document.querySelector(".cart-header__title"))
+    document.querySelector(
+      ".cart-header__title"
+    ).innerHTML = `سبد خرید (${cart.length} محصول)`;
 
   document.querySelectorAll(".quantity-select-element").forEach((e) => {
     e.addEventListener("change", (value) => {

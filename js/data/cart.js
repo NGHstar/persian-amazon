@@ -17,6 +17,7 @@ function updateCartBadge(quantity) {
   if (cartBadge) {
     if (cart.length) {
       cartBadge.classList.remove("hide");
+      cartBadge.innerHTML = cart.length;
     } else {
       cartBadge.classList.add("hide");
     }
