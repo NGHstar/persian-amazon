@@ -1,7 +1,7 @@
 import { renderOrderSummary } from "../../../js/cart/order_summary.js";
 import { loadFromStorage, cart } from "../../../js/data/cart.js";
 
-describe("test suit: render order summary", () => {
+describe("test suite: render order summary", () => {
   // ---
   const productId1 = "4g0emg17";
   const productId2 = "mk02z4ec";
