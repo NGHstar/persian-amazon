@@ -1,4 +1,4 @@
-import { cart, getTotalQuantity } from "../data/cart.js";
+import cart from "../data/cart.js";
 import { getDeliveryOption } from "../data/delivery_options.js";
 import { getProduct } from "../data/products.js";
 
@@ -8,7 +8,7 @@ export function renderCheckoutSummary() {
   let productsTotal = 0;
   let shippingTotal = 0;
 
-  cart.forEach((cartItem) => {
+  cart.items.forEach((cartItem) => {
     // ---
     const product = getProduct(cartItem.productId);
     const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
@@ -24,7 +24,7 @@ export function renderCheckoutSummary() {
   const checkoutSummaryHTML = `
     <span class="checkout-title">خلاصه سفارش</span>
       <div class="checkout-row">
-        <span class="checkout-cart-items__count">محصولات (${getTotalQuantity()}):</span>
+        <span class="checkout-cart-items__count">محصولات (${cart.getTotalQuantity()}):</span>
         <span class="checkout-cart-items__total">${productsTotal} تومان</span>
       </div>
       <div class="checkout-row">

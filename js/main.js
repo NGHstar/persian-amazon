@@ -1,4 +1,4 @@
-import { cart, addToCart } from "./data/cart.js";
+import cart from "./data/cart.js";
 import { products } from "./data/products.js";
 
 // ================ GENERATE PRODUCTS ================
@@ -69,6 +69,6 @@ document
       ).value;
 
       showAddedToCartMessage(productId);
-      addToCart(productId, Number(productQuantity));
+      cart.add(productId, Number(productQuantity));
     });
   });
