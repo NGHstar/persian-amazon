@@ -9,7 +9,7 @@ class MyFooter extends HTMLElement {
                     class="amazon-footer__logo"
                     />
                 </a>
-                <p class="amazon-footer__copyright">copyright amazon 2025</p>
+                <p class="amazon-footer__copyright">کپی رایت آمازون فارسی 2025</p>
             </footer>
         `;
   }

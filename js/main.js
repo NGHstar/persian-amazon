@@ -15,13 +15,13 @@ products.forEach((product, index) => {
             <div class="product-card__rating">
               <img
                 class="rating__image"
-                src="images/ratings/rating-${product.rating.stars * 10}.png"
+                src="${product.starsUrl()}"
                 alt="rating stars"
               />
               <span class="rating__vote-count">${product.rating.count}</span>
             </div>
 
-            <p class="product-card__price">${product.price}</p>
+            <p class="product-card__price">${product.priceString()}</p>
             <div class="product-card__quantity">
               <span class="quantity__title">تعداد: </span>
               <select class="product-quantity-${product.id}">

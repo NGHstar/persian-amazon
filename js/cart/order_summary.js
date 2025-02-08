@@ -14,12 +14,9 @@ export function renderOrderSummary() {
   cart.items.forEach((cartItem) => {
     // ---
     const productId = cartItem.productId;
-    const matchingProduct = getProduct(productId);
-
     const deliveryOptionId = cartItem.deliveryOptionId;
-
+    const matchingProduct = getProduct(productId);
     const deliveryOption = getDeliveryOption(deliveryOptionId);
-
     const selectedDeliveryDate = persianDate(deliveryOption.days);
 
     cartItemsHTML += `
@@ -34,9 +31,7 @@ export function renderOrderSummary() {
                 />
                 <div class="product-info">
                 <span class="product-name">${matchingProduct.name}</span>
-                <span class="product-price">${
-                  matchingProduct.price
-                } تومان</span>
+                <span class="product-price">${matchingProduct.priceString()}</span>
                 <div class="product-card__quantity">
                     <span class="quantity__title">تعداد: </span>
                     <select
@@ -80,7 +75,9 @@ export function renderOrderSummary() {
     deliveryOptions.forEach((option) => {
       // ---
       const priceString =
-        option.price === 0 ? "رایگان" : `${option.price}تومان`;
+        option.price === 0
+          ? "رایگان"
+          : `${option.price.toLocaleString("fa-IR")} تومان`;
 
       const isChecked = option.id === deliveryId ? "checked" : "";
 
@@ -108,7 +105,9 @@ export function renderOrderSummary() {
   if (document.querySelector(".cart-header__title"))
     document.querySelector(
       ".cart-header__title"
-    ).innerHTML = `سبد خرید (${cart.items.length} محصول)`;
+    ).innerHTML = `سبد خرید (${cart.items.length.toLocaleString("fa-IR", {
+      useGrouping: false,
+    })} محصول)`;
 
   document.querySelectorAll(".quantity-select-element").forEach((e) => {
     e.addEventListener("change", (value) => {

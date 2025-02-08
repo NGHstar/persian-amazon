@@ -11,6 +11,30 @@ export function getProduct(productId) {
   return matchingProduct;
 }
 
+class Product {
+  id;
+  image;
+  name;
+  rating;
+  price;
+
+  constructor(productDetails) {
+    this.id = productDetails.id;
+    this.image = productDetails.image;
+    this.name = productDetails.name;
+    this.rating = productDetails.rating;
+    this.price = productDetails.price;
+  }
+
+  starsUrl() {
+    return `images/ratings/rating-${this.rating.stars * 10}.png`;
+  }
+
+  priceString() {
+    return this.price.toLocaleString("fa-IR") + " تومان";
+  }
+}
+
 export const products = [
   {
     id: "e62d810g",
@@ -104,4 +128,6 @@ export const products = [
     price: 1100000,
     keywords: ["اتاق خواب", "لوازم خانگی", "چراغ"],
   },
-];
+].map((productDetails) => {
+  return new Product(productDetails);
+});

@@ -25,20 +25,28 @@ export function renderCheckoutSummary() {
     <span class="checkout-title">خلاصه سفارش</span>
       <div class="checkout-row">
         <span class="checkout-cart-items__count">محصولات (${cart.getTotalQuantity()}):</span>
-        <span class="checkout-cart-items__total">${productsTotal} تومان</span>
+        <span class="checkout-cart-items__total">${productsTotal.toLocaleString(
+          "fa-IR"
+        )} تومان</span>
       </div>
       <div class="checkout-row">
         <span>هزینه ارسال:</span>
-        <span class="checkout-shipping__total">${shippingTotal} تومان</span>
+        <span class="checkout-shipping__total">${shippingTotal.toLocaleString(
+          "fa-IR"
+        )} تومان</span>
       </div>
       <div class="checkout-row">
         <span class="checkout-shipping__title">مالیات (10 درصد):</span>
-        <span class="checkout-shipping__total">${Math.round(tax)} تومان</span>
+        <span class="checkout-shipping__total">${Math.round(tax).toLocaleString(
+          "fa-IR"
+        )} تومان</span>
       </div>
       <hr />
       <div class="checkout-row checkout-total-wrapper">
         <span>هزینه کل:</span>
-        <span class="checkout-total">${Math.round(totalWithTax)} تومان</span>
+        <span class="checkout-total">${Math.round(totalWithTax).toLocaleString(
+          "fa-IR"
+        )} تومان</span>
       </div>
     <button class="product-card__add-to-cart-button">تسویه حساب</button>
   `;
