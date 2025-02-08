@@ -32,6 +32,9 @@ products.forEach((product, index) => {
                 <option value="5">5</option>
               </select>
             </div>
+
+            ${product.extraInfoHTML()}
+
             <div class="product-card__added-to-cart-message product-message-${
               product.id
             }">
