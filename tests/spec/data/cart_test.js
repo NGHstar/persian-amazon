@@ -1,4 +1,4 @@
-import { addToCart, cart, loadFromStorage } from "../../../js/data/cart.js";
+import cart from "../../../js/data/cart.js";
 
 describe("test suite: addToCart", () => {
   // existing product
@@ -12,14 +12,14 @@ describe("test suite: addToCart", () => {
       ]);
     });
 
-    loadFromStorage();
+    cart.loadFromStorage();
 
-    addToCart("4g0emg17");
+    cart.add("4g0emg17");
 
-    expect(cart.length).toEqual(1);
+    expect(cart.items.length).toEqual(1);
     expect(localStorage.setItem).toHaveBeenCalledTimes(1);
-    expect(cart[0].productId).toEqual("4g0emg17");
-    expect(cart[0].quantity).toEqual(2);
+    expect(cart.items[0].productId).toEqual("4g0emg17");
+    expect(cart.items[0].quantity).toEqual(2);
   });
 
   // new product
@@ -31,12 +31,12 @@ describe("test suite: addToCart", () => {
       return JSON.stringify([]);
     });
 
-    loadFromStorage();
+    cart.loadFromStorage();
 
-    addToCart("4g0emg17");
-    expect(cart.length).toEqual(1);
+    cart.add("4g0emg17");
+    expect(cart.items.length).toEqual(1);
     expect(localStorage.setItem).toHaveBeenCalledTimes(1);
-    expect(cart[0].productId).toEqual("4g0emg17");
-    expect(cart[0].quantity).toEqual(1);
+    expect(cart.items[0].productId).toEqual("4g0emg17");
+    expect(cart.items[0].quantity).toEqual(1);
   });
 });

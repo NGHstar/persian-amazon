@@ -5,7 +5,7 @@ class Cart {
 
   constructor(localStorageKey) {
     this.#localStorageKey = localStorageKey;
-    this.#loadFromStorage();
+    this.loadFromStorage();
   }
 
   add(productId, productQuantity) {
@@ -37,7 +37,7 @@ class Cart {
     return matchingItem;
   }
 
-  #loadFromStorage() {
+  loadFromStorage() {
     this.items = JSON.parse(localStorage.getItem(this.#localStorageKey));
 
     if (!this.items) {

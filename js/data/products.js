@@ -47,6 +47,7 @@ class Clothing extends Product {
     this.sizeChartLink = productDetails.sizeChartLink;
   }
 
+  // over-ride : replace with super function (the function in the product class(parent class))
   extraInfoHTML() {
     return `<a href="${this.sizeChartLink}" target="_blank">راهنمای سایز</a>`;
   }

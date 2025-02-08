@@ -1,5 +1,5 @@
 import { renderOrderSummary } from "../../../js/cart/order_summary.js";
-import { loadFromStorage, cart } from "../../../js/data/cart.js";
+import cart from "../../../js/data/cart.js";
 
 describe("test suite: render order summary", () => {
   // ---
@@ -16,12 +16,12 @@ describe("test suite: render order summary", () => {
         { productId: productId2, quantity: 2, deliveryOptionId: "1" },
       ]);
     });
-    loadFromStorage();
+    cart.loadFromStorage();
     renderOrderSummary();
   });
 
   afterEach(() => {
-    console.log("after");
+    // after
   });
 
   beforeAll(() => {
@@ -55,7 +55,7 @@ describe("test suite: render order summary", () => {
       null
     );
 
-    expect(cart.length).toEqual(1);
-    expect(cart[0].productId).toEqual(productId2);
+    expect(cart.items.length).toEqual(1);
+    expect(cart.items[0].productId).toEqual(productId2);
   });
 });
