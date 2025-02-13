@@ -3,7 +3,11 @@ import { renderCheckoutSummary } from "./cart/checkout_summary.js";
 import { fetchProducts } from "./data/products.js";
 
 async function loadPage() {
-  await fetchProducts();
+  try {
+    await fetchProducts();
+  } catch (error) {
+    console.log(error);
+  }
   renderOrderSummary();
   renderCheckoutSummary();
 }
