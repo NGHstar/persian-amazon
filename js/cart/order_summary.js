@@ -1,5 +1,5 @@
 import cart from "../data/cart.js";
-import { getProduct, loadProducts } from "../data/products.js";
+import { getProduct } from "../data/products.js";
 import { persianDate } from "../utils/persian_date.js";
 import { renderCheckoutSummary } from "./checkout_summary.js";
 import {
@@ -141,8 +141,3 @@ export function renderOrderSummary() {
     });
   });
 }
-
-loadProducts(() => {
-  renderCheckoutSummary();
-  renderOrderSummary();
-});
