@@ -1,6 +1,6 @@
 import { renderOrderSummary } from "../../../js/cart/order_summary.js";
 import cart from "../../../js/data/cart.js";
-import { loadProducts } from "../../../js/data/products.js";
+import { fetchProducts } from "../../../js/data/products.js";
 
 describe("test suite: render order summary", () => {
   // ---
@@ -19,12 +19,16 @@ describe("test suite: render order summary", () => {
     });
     cart.loadFromStorage();
 
-    loadProducts((renderOrderSummary) => done());
-
     document.querySelector(".test-cart-body").innerHTML = `
             <div class="cart-body__orders"></div>
             <div class="cart-body__checkout"></div>
         `;
+
+    fetchProducts().then(() => {
+      done();
+      renderOrderSummary();
+    });
+    // ---
   });
 
   afterAll(() => {

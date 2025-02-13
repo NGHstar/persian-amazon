@@ -55,21 +55,19 @@ class Clothing extends Product {
 
 export let products = [];
 
-export function loadProducts(fun) {
-  const xhr = new XMLHttpRequest();
-
-  xhr.addEventListener("load", () => {
-    products = JSON.parse(xhr.response).map((productDetails) => {
-      if (productDetails.type === "clothing") {
-        return new Clothing(productDetails);
-      } else {
+export function fetchProducts() {
+  const promise = fetch("https://ghabagha.ir/get-products.php")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      products = data.map((productDetails) => {
+        if (productDetails.type === "clothing") {
+          return new Clothing(productDetails);
+        }
         return new Product(productDetails);
-      }
+      });
     });
-    console.log(products);
-    fun();
-  });
 
-  xhr.open("GET", "https://ghabagha.ir/get-products.php");
-  xhr.send();
+  return promise;
 }

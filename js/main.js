@@ -1,8 +1,10 @@
 import cart from "./data/cart.js";
-import { loadProducts, products } from "./data/products.js";
+import { fetchProducts, products } from "./data/products.js";
 
 // ================ GENERATE PRODUCTS ================
-loadProducts(generateProductsGrid);
+fetchProducts().then(() => {
+  generateProductsGrid();
+});
 
 function generateProductsGrid() {
   const productsGrid = document.querySelector(".amazon-main__products-grid");
