@@ -1,11 +1,14 @@
 import cart from "./data/cart.js";
-import { products } from "./data/products.js";
+import { loadProducts, products } from "./data/products.js";
 
 // ================ GENERATE PRODUCTS ================
-const productsGrid = document.querySelector(".amazon-main__products-grid");
-let productsHTML = "";
-products.forEach((product, index) => {
-  productsHTML += `
+loadProducts(generateProductsGrid);
+
+function generateProductsGrid() {
+  const productsGrid = document.querySelector(".amazon-main__products-grid");
+  let productsHTML = "";
+  products.forEach((product, index) => {
+    productsHTML += `
           <div class="product-card">
             <img
               src="${product.image}"
@@ -47,8 +50,24 @@ products.forEach((product, index) => {
             </button>
           </div>
   `;
-});
-productsGrid.innerHTML = productsHTML;
+  });
+  productsGrid.innerHTML = productsHTML;
+
+  document
+    .querySelectorAll(".product-card__add-to-cart-button")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        const productId = button.dataset.productId;
+
+        const productQuantity = document.querySelector(
+          `.product-quantity-${productId}`
+        ).value;
+
+        showAddedToCartMessage(productId);
+        cart.add(productId, Number(productQuantity));
+      });
+    });
+}
 
 // ================ ADD TO CART ================
 function showAddedToCartMessage(productId) {
@@ -60,18 +79,3 @@ function showAddedToCartMessage(productId) {
     message.classList.remove("visible");
   }, 2000);
 }
-
-document
-  .querySelectorAll(".product-card__add-to-cart-button")
-  .forEach((button) => {
-    button.addEventListener("click", () => {
-      const productId = button.dataset.productId;
-
-      const productQuantity = document.querySelector(
-        `.product-quantity-${productId}`
-      ).value;
-
-      showAddedToCartMessage(productId);
-      cart.add(productId, Number(productQuantity));
-    });
-  });
