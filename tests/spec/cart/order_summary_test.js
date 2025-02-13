@@ -1,12 +1,13 @@
 import { renderOrderSummary } from "../../../js/cart/order_summary.js";
 import cart from "../../../js/data/cart.js";
+import { loadProducts } from "../../../js/data/products.js";
 
 describe("test suite: render order summary", () => {
   // ---
   const productId1 = "4g0emg17";
   const productId2 = "mk02z4ec";
 
-  beforeEach(() => {
+  beforeAll((done) => {
     //---
     spyOn(localStorage, "setItem");
 
@@ -17,14 +18,9 @@ describe("test suite: render order summary", () => {
       ]);
     });
     cart.loadFromStorage();
-    renderOrderSummary();
-  });
 
-  afterEach(() => {
-    // after
-  });
+    loadProducts((renderOrderSummary) => done());
 
-  beforeAll(() => {
     document.querySelector(".test-cart-body").innerHTML = `
             <div class="cart-body__orders"></div>
             <div class="cart-body__checkout"></div>
