@@ -56,8 +56,11 @@ class Clothing extends Product {
 export let products = [];
 
 export function fetchProducts() {
-  const promise = fetch("https://ghabagha.ir/get-products.php")
+  const promise = fetch(
+    "https://mock-api-zeta-liard.vercel.app/persian-amazon/products"
+  )
     .then((response) => {
+      console.log(response.json);
       return response.json();
     })
     .then((data) => {

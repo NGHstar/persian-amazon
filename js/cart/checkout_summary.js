@@ -48,7 +48,30 @@ export function renderCheckoutSummary() {
           "fa-IR"
         )} تومان</span>
       </div>
-    <button class="product-card__add-to-cart-button">تسویه حساب</button>
+    <button class="product-card__add-to-cart-button js-submit-order">ثبت سفارش</button>
   `;
   checkoutContainer.innerHTML = checkoutSummaryHTML;
+
+  document
+    .querySelector(".js-submit-order")
+    .addEventListener("click", async () => {
+      const response = await fetch(
+        "https://mock-api-zeta-liard.vercel.app/persian-amazon/orders",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ cart: cart }),
+        }
+      );
+
+      if (!response.ok) {
+        console.error("خطا در دریافت پاسخ:", response.status);
+        return;
+      }
+
+      const order = await response.json();
+      console.log(order);
+    });
 }
