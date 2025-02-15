@@ -5,12 +5,12 @@
 }
 
 .order-card {
-  margin: 0 16px;
+  margin: 0 16px 24px;
 }
 
 .order-card header {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   padding: 1rem 1.2rem;
   background-color: #f0f2f2;
@@ -137,9 +137,5 @@
   .order-card__column {
     flex-direction: row;
     gap: 8px;
-  }
-
-  .order-id-title {
-    min-width: 80px;
   }
 }

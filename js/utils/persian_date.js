@@ -8,3 +8,13 @@ export function persianDate(daysToAdd) {
     month: "long",
   }).format(date);
 }
+
+export function convertToPersianDate(isoDate) {
+  let date = new Date(isoDate);
+
+  return new Intl.DateTimeFormat("fa", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  }).format(date);
+}

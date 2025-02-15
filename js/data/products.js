@@ -60,7 +60,6 @@ export function fetchProducts() {
     "https://mock-api-zeta-liard.vercel.app/persian-amazon/products"
   )
     .then((response) => {
-      console.log(response.json);
       return response.json();
     })
     .then((data) => {
