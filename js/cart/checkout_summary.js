@@ -1,6 +1,7 @@
 import cart from "../data/cart.js";
 import { getDeliveryOption } from "../data/delivery_options.js";
 import { getProduct } from "../data/products.js";
+import { addOrder } from "../data/orders.js";
 
 export function renderCheckoutSummary() {
   // ---
@@ -72,6 +73,8 @@ export function renderCheckoutSummary() {
       }
 
       const order = await response.json();
-      console.log(order);
+      addOrder(order);
+
+      window.location.href = "orders.html";
     });
 }
