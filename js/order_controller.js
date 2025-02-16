@@ -5,7 +5,7 @@ import { convertToPersianDate } from "./utils/persian_date.js";
 // elements
 const ordersContainer = document.querySelector(".orders");
 
-function generateProducts(products) {
+function generateProducts(products, orderID) {
   let orderProductsHTML = "";
   products.forEach((orderProduct) => {
     const product = getProduct(orderProduct.productId);
@@ -26,7 +26,7 @@ function generateProducts(products) {
             </button>
             </div>
             <div class="track-order-button-wrapper">
-            <a href="tracking.html">
+            <a href="tracking.html?orderId=${orderID}&productId=${product.id}">
                 <button class="track-order-button">پیگیری بسته</button>
             </a>
             </div>
@@ -57,7 +57,7 @@ function renderOrdersCard() {
             </div>
           </header>
           <div class="order-card__products">
-            ${generateProducts(order.products)}
+            ${generateProducts(order.products, order.id)}
           </div>
         </div>`;
   });
