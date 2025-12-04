@@ -60,6 +60,7 @@ export function renderCheckoutSummary() {
   const submitOrderBtn = document.querySelector(".js-submit-order");
   submitOrderBtn.addEventListener("click", async () => {
     submitOrderBtn.innerHTML = `<div class="smallLoader"></div>`;
+
     const response = await fetch(
       "https://mock-api-zeta-liard.vercel.app/persian-amazon/orders",
       {
@@ -78,6 +79,8 @@ export function renderCheckoutSummary() {
 
     const order = await response.json();
     addOrder(order);
+
+    cart.clear();
 
     window.location.href = "orders.html";
   });
