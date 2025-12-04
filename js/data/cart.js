@@ -38,7 +38,9 @@ class Cart {
   }
 
   loadFromStorage() {
-    this.items = JSON.parse(localStorage.getItem(this.#localStorageKey));
+    this.items = JSON.parse(
+      localStorage.getItem(this.#localStorageKey)
+    );
 
     if (!this.items) {
       this.items = [];
@@ -46,13 +48,18 @@ class Cart {
   }
 
   saveToStorage() {
-    localStorage.setItem(this.#localStorageKey, JSON.stringify(this.items));
+    localStorage.setItem(
+      this.#localStorageKey,
+      JSON.stringify(this.items)
+    );
     this.updateCartBadge();
   }
 
-  updateCartBadge(quantity) {
+  updateCartBadge() {
     const cartBadge = document.querySelector(".menu__cart-badge");
-    const mobileMenuCart = document.querySelector(".mobile-menu-cart");
+    const mobileMenuCart = document.querySelector(
+      ".mobile-menu-cart"
+    );
     if (cartBadge) {
       if (this.items.length) {
         cartBadge.classList.remove("hide");

@@ -20,16 +20,9 @@ function generateProducts(products, orderID) {
             <span class="product-quantity">تعداد: ${
               orderProduct.quantity
             }</span>
-            <button class="product-reorder-button">
-                <span>خرید مجدد</span>
-                <img src="images/icons/rebuy-icon.svg" alt="icon" />
-            </button>
+   
             </div>
-            <div class="track-order-button-wrapper">
-            <a href="tracking.html?orderId=${orderID}&productId=${product.id}">
-                <button class="track-order-button">پیگیری بسته</button>
-            </a>
-            </div>
+            
         </div>
     `;
   });
@@ -40,7 +33,7 @@ function renderOrdersCard() {
   let ordersContainerHTML = "";
   orders.forEach((order) => {
     ordersContainerHTML += `<div class="order-card">
-          <header>
+          <div class="order-header">
             <div class="order-card__column">
               <span>زمان ثبت:</span>
               <span class="order-placed">${convertToPersianDate(
@@ -55,10 +48,15 @@ function renderOrdersCard() {
               <span class="order-id-title">کد سفارش:</span>
               <span class="order-id">${order.id}</span>
             </div>
-          </header>
+          </div>
           <div class="order-card__products">
             ${generateProducts(order.products, order.id)}
           </div>
+          <div class="track-order-button-wrapper">
+            <a href="tracking.html?orderId=${order.id}">
+                <button class="track-order-button">پیگیری بسته</button>
+            </a>
+            </div>
         </div>`;
   });
   ordersContainer.innerHTML = ordersContainerHTML;

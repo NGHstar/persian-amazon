@@ -5,14 +5,18 @@ import { addOrder } from "../data/orders.js";
 
 export function renderCheckoutSummary() {
   // ---
-  const checkoutContainer = document.querySelector(".cart-body__checkout");
+  const checkoutContainer = document.querySelector(
+    ".cart-body__checkout"
+  );
   let productsTotal = 0;
   let shippingTotal = 0;
 
   cart.items.forEach((cartItem) => {
     // ---
     const product = getProduct(cartItem.productId);
-    const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
+    const deliveryOption = getDeliveryOption(
+      cartItem.deliveryOptionId
+    );
 
     productsTotal += product.price * cartItem.quantity;
     shippingTotal += deliveryOption.price;
@@ -38,43 +42,43 @@ export function renderCheckoutSummary() {
       </div>
       <div class="checkout-row">
         <span class="checkout-shipping__title">مالیات (10 درصد):</span>
-        <span class="checkout-shipping__total">${Math.round(tax).toLocaleString(
-          "fa-IR"
-        )} تومان</span>
+        <span class="checkout-shipping__total">${Math.round(
+          tax
+        ).toLocaleString("fa-IR")} تومان</span>
       </div>
       <hr />
       <div class="checkout-row checkout-total-wrapper">
         <span>هزینه کل:</span>
-        <span class="checkout-total">${Math.round(totalWithTax).toLocaleString(
-          "fa-IR"
-        )} تومان</span>
+        <span class="checkout-total">${Math.round(
+          totalWithTax
+        ).toLocaleString("fa-IR")} تومان</span>
       </div>
     <button class="product-card__add-to-cart-button js-submit-order">ثبت سفارش</button>
   `;
   checkoutContainer.innerHTML = checkoutSummaryHTML;
 
-  document
-    .querySelector(".js-submit-order")
-    .addEventListener("click", async () => {
-      const response = await fetch(
-        "https://mock-api-zeta-liard.vercel.app/persian-amazon/orders",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ cart: cart }),
-        }
-      );
-
-      if (!response.ok) {
-        console.error("خطا در دریافت پاسخ:", response.status);
-        return;
+  const submitOrderBtn = document.querySelector(".js-submit-order");
+  submitOrderBtn.addEventListener("click", async () => {
+    submitOrderBtn.innerHTML = `<div class="smallLoader"></div>`;
+    const response = await fetch(
+      "https://mock-api-zeta-liard.vercel.app/persian-amazon/orders",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ cart: cart }),
       }
+    );
 
-      const order = await response.json();
-      addOrder(order);
+    if (!response.ok) {
+      console.error("خطا در دریافت پاسخ:", response.status);
+      return;
+    }
 
-      window.location.href = "orders.html";
-    });
+    const order = await response.json();
+    addOrder(order);
+
+    window.location.href = "orders.html";
+  });
 }

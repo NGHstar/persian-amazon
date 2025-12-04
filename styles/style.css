@@ -25,6 +25,7 @@ body {
   margin: 0;
   font-family: "vazir";
   box-sizing: border-box;
+  background-color: #f3f5f6;
 }
 
 .wrapper {
@@ -35,4 +36,32 @@ body {
 
 main {
   flex: 1;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin-top: 5rem;
+  margin-bottom: 26rem;
+  margin-inline: auto;
+  border: 8px solid;
+  border-color: #000 #0000;
+  animation: l1 1s infinite;
+}
+
+.smallLoader {
+  width: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin-inline: auto;
+  border: 8px solid;
+  border-color: #000 #0000;
+  animation: l1 1s infinite;
+}
+
+@keyframes l1 {
+  to {
+    transform: rotate(0.5turn);
+  }
 }

@@ -1,8 +1,8 @@
 /* ====================== HEADER ====================== */
 .cart-header {
   padding-left: 10px;
-  margin-top: 40px;
-  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +41,8 @@
 /* order item */
 .order-item {
   margin-bottom: 16px;
-  border: 1px solid silver;
+  background-color: white;
+  box-shadow: rgba(107, 139, 204, 0.2) 0px 2px 8px 0px;
   position: relative;
   border-radius: 15px;
   padding: 0 16px 16px 16px;
@@ -52,7 +53,7 @@
 .order-item__date {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #007600;
+  color: black;
 }
 
 .order-item-content {
@@ -79,11 +80,12 @@
 
 .product-name {
   font-weight: bold;
+  color: #222836;
 }
 
 .product-price {
   font-weight: bold;
-  color: #b12704;
+  color: #138b4f;
 }
 
 .remove-product-button img {
@@ -97,7 +99,7 @@
   top: 12px;
   left: 12px;
   background-color: white;
-  border: 1px solid #d8596a;
+  border-bottom: 2px solid #d8596a;
   color: black;
   font-family: "vazir";
   font-weight: bold;
@@ -119,15 +121,18 @@
 
 .delivery-title {
   font-weight: bold;
+  color: #222836;
 }
 
 .delivery-option {
   display: flex;
   gap: 8px;
+  cursor: pointer;
   margin-block: 14px;
 }
 
 .delivery-option input[type="radio"] {
+  cursor: pointer;
   width: 20px;
 }
 
@@ -138,7 +143,7 @@
 
 .delivery-option__date {
   font-weight: bold;
-  color: #007600;
+  color: #47475a;
 }
 
 .delivery-option__price {
@@ -148,7 +153,8 @@
 /* checkout */
 .cart-body__checkout {
   height: fit-content;
-  border: 1px solid silver;
+  background-color: white;
+  box-shadow: rgba(107, 139, 204, 0.2) 0px 2px 8px 0px;
   padding: 16px;
   border-radius: 15px;
   display: flex;
@@ -158,7 +164,7 @@
 
 .cart-body__checkout hr {
   width: 100%;
-  border-top: 1px dashed silver;
+  border-top: 1px solid rgb(238, 238, 238);
   margin-block: 12px;
 }
 
@@ -166,21 +172,26 @@
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 16px;
+  margin-right: 0.4rem;
+  margin-top: 8px;
 }
 
 .checkout-row {
   display: flex;
   justify-content: space-between;
+  padding-inline: 1rem;
 }
 
 .checkout-row.checkout-total-wrapper span {
-  color: green;
+  color: dodgerblue;
   font-weight: bold;
   font-size: 1.1rem;
+  padding-inline: 0.6rem;
 }
 
 .cart-body__checkout button {
   margin-top: 18px;
+  margin-bottom: 6px;
 }
 
 /* SCREEN CONTROL */

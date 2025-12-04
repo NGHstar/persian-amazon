@@ -6,15 +6,19 @@
 
 .order-card {
   margin: 0 16px 24px;
+  background: white;
+  box-shadow: rgba(107, 139, 204, 0.2) 0px 2px 8px 0px;
+  border-radius: 15px;
 }
 
-.order-card header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+.order-header {
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
   padding: 1rem 1.2rem;
-  background-color: #f0f2f2;
-  border: 1px solid silver;
+  border-bottom: 1px solid #eee;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -25,11 +29,10 @@
 
 .order-card__column {
   display: flex;
-  flex-direction: column;
+  gap: 6px;
 }
 
 .order-card__products {
-  border: 1px solid silver;
   border-top: none;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -89,25 +92,22 @@
 }
 
 .track-order-button-wrapper {
-  flex: 1;
   display: flex;
   justify-content: end;
+  padding-bottom: 1rem;
+  padding-inline: 1rem;
 }
 
 .track-order-button {
-  border: 1px solid silver;
-  border-radius: 8px;
-  background-color: white;
+  border-radius: 10px;
+  background-color: #d8a159;
+  border: 2px solid #131921;
   font-family: "vazir";
   padding: 0 50px;
   transition: 0.3s;
   height: 40px;
   font-size: 1rem;
-}
-
-.track-order-button:hover {
   cursor: pointer;
-  background-color: #f0f2f2;
 }
 
 /* =============== SCREEN CONTROL =============== */
@@ -122,16 +122,6 @@
     height: 40px;
     padding: 0;
     border-radius: 12px;
-  }
-
-  .track-order-button-wrapper {
-    justify-self: start;
-    grid-column: 2;
-  }
-
-  .order-card header {
-    grid-template-columns: 1fr;
-    gap: 8px;
   }
 
   .order-card__column {

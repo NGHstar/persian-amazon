@@ -5,7 +5,8 @@ main {
 }
 
 .package-details {
-  border: 1px solid silver;
+  background-color: white;
+  box-shadow: rgba(107, 139, 204, 0.2) 0px 2px 8px 0px;
   border-radius: 15px;
   padding: 20px 24px;
   margin: 0 16px;
@@ -38,29 +39,35 @@ main {
 }
 
 .active-label {
-  color: #007600;
+  color: seagreen;
 }
 
 .tracking-bar-container {
-  background-color: silver;
+  background-color: #eee;
+  border-radius: 8px;
   height: 24px;
 }
 
 .tracking-bar-progress {
   position: relative;
   height: 100%;
-  width: 20px;
-  background-color: #007600;
+  width: 50px;
+  border-radius: 8px;
+  background-color: mediumseagreen;
+}
+
+.progress-shipping {
+  width: 50%;
+}
+
+.progress-delivered {
+  width: 100%;
 }
 
 .package-product-wrapper {
   display: flex;
-  justify-content: space-between;
-}
-
-.product-info-wrapper {
-  display: flex;
-  flex-direction: column;
+  justify-content: start;
+  gap: 2rem;
 }
 
 @media only screen and (max-width: 550px) {

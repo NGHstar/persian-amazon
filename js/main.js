@@ -7,9 +7,11 @@ fetchProducts().then(() => {
 });
 
 function generateProductsGrid() {
-  const productsGrid = document.querySelector(".amazon-main__products-grid");
+  const productsGrid = document.querySelector(
+    ".amazon-main__products-grid"
+  );
   let productsHTML = "";
-  products.forEach((product, index) => {
+  products.forEach((product) => {
     productsHTML += `
           <div class="product-card">
             <img
@@ -23,7 +25,9 @@ function generateProductsGrid() {
                 src="${product.starsUrl()}"
                 alt="rating stars"
               />
-              <span class="rating__vote-count">${product.rating.count}</span>
+              <span class="rating__vote-count">${
+                product.rating.count
+              }</span>
             </div>
 
             <p class="product-card__price">${product.priceString()}</p>
@@ -73,7 +77,9 @@ function generateProductsGrid() {
 
 // ================ ADD TO CART ================
 function showAddedToCartMessage(productId) {
-  const message = document.querySelector(`.product-message-${productId}`);
+  const message = document.querySelector(
+    `.product-message-${productId}`
+  );
 
   message.classList.add("visible");
 
